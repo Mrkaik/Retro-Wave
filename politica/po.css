@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que a página ocupe a altura total da janela do navegador. */
+}
+
+header {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.content {
+    margin: 20px;
+    flex: 1; /* Isso faz com que o conteúdo ocupe o espaço disponível e empurre o rodapé para a parte inferior da página. */
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+button {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e55b51;
+}
+
+/* Adicionar estilos para telas menores (responsivo) */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+    
+    .content {
+        padding: 10px;
+    }
+    
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

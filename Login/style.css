@@ -1,0 +1,27 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: -webkit-linear-gradient(to right, rgb(21, 177, 195), rgb(244, 168, 46));
+  background: linear-gradient(to right, rgb(21, 177, 195), rgb(244, 168, 46));
+}
+
+
+/* Certifique-se de que todos os elementos pai também tenham altura 100% */
+.vh-100 {
+  height: 100%;
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #019C94;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgb(21, 177, 195),rgb(244, 168, 46));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(21, 177, 195), rgb(244, 168, 46));
+}

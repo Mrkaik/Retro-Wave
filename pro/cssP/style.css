@@ -1,0 +1,327 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    opacity: 0.7;
+  }
+  
+  .logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: #019C94;
+    height: 8vh;
+  }
+  
+  main {
+    background-size: cover;
+    height: 100%;
+    background-color: rgb(21, 177, 195);
+  }
+  
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos do contêiner de produtos */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cria uma grade com 4 colunas */
+  grid-gap: 20px; /* Espaço entre os produtos */
+}
+
+/* Estilos do produto */
+.product {
+  border: 1px solid #ccc;
+  text-align: center;
+  transition: transform 0.3s;
+  
+}
+
+.product:hover {
+  transform: scale(1.05); /* Efeito de zoom no hover */
+}
+
+.product img {
+  max-width: 100%;
+}
+
+
+/* Estilos do botão de compra */
+/* Estilos do ícone de carrinho */
+/* Estilos do contêiner do botão */
+.button-container {
+  text-align: center;
+  
+}
+
+
+
+/* Estilos do botão */
+.comprar {
+  background-color: #d0ff00;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  
+  
+}
+
+.comprar:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos do ícone de carrinho */
+.comprar i {
+  margin-left: 5px;
+}
+
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+  }
+  
+  .mobile-menu {
+    display: none;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+  }
+  
+  
+  @media (max-width: 768px) {
+    body {
+      overflow-x: hidden;
+    }
+    .nav-list {
+      position: absolute;
+      top: 8vh;
+      left: 0; /* Adicione esta propriedade para posicionar o painel à esquerda */
+      width: 50vw;
+      height: 92vh;
+      background: #F4A82E;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      transform: translateX(-100%); /* Altere de translateX(100%) para translateX(-100%) para que o painel fique oculto inicialmente */
+      transition: transform 0.3s ease-in;
+      z-index: 3;
+    }
+   
+  
+  
+  
+    .nav-list li {
+      margin-left: 0;
+      opacity: 0;
+    }
+  
+    .mobile-menu {
+      display: block;
+    }
+  }
+  
+  .nav-list.active {
+    transform: translateX(0);
+  }
+  
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+  
+  .mobile-menu.active .line2 {
+    opacity: 0;
+  }
+  
+  .mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
+  
+  @media (max-width: 768px) {
+    .featured-card {
+      flex: 0 0 calc(50% - 20px);
+      max-width: calc(50% - 20px);
+    }
+  }
+  .login-button button {
+    border: none;
+    background-color: #06cec4;
+    padding: 10px 14px;
+    border-radius: 5px;
+  }
+  
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+  
+  .whatsapp-float a {
+    display: block;
+    background-color: #25d366;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    line-height: 60px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .whatsapp-float a:hover {
+    background-color: #128C7E;
+  }
+  
+  .whatsapp-float img {
+    width: 100%;
+    height: auto;
+  }
+  /* Estilos para o footer */
+footer {
+    background-color: #068d86;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  /* Estilos para as colunas no footer */
+  .footer-column {
+    display: inline-block;
+    margin: 0 20px;
+  }
+  
+  .footer-column h4 {
+    font-size: 18px;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para os ícones sociais no footer */
+  .footer-icons {
+    margin-top: 20px;
+  }
+  
+  .footer-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 24px;
+  }
+  
+  /* Estilos para os links no texto de direitos autorais */
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    display: 10px;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  
+  .footer-links li {
+    margin: 10px 10px;
+  }
+  
+  .footer-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 768px) {
+    /* Estilos para dispositivos móveis */
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr); /* Exemplo: 2 colunas em dispositivos móveis */
+      /* ... adicione outros estilos necessários */
+    }
+  }
+  @media (max-width: 768px) {
+    /* Estilos para dispositivos móveis */
+    .nav-list {
+      flex-direction: column;
+      align-items: center;
+      transform: translateX(-100%);
+      /* ... adicione outros estilos necessários */
+    }
+  
+    .nav-list.active {
+      transform: translateX(0);
+    }
+    
+    /* ... adicione outros estilos necessários */
+  }
+  .cart-icon {
+    position: relative;
+  }
+  
+  .cart-notification {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    z-index: 1;
+  }

@@ -1,0 +1,486 @@
+/* Estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.logo {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  background: #019C94;
+  height: 8vh;
+}
+
+main {
+  background-size: cover;
+  height: 100%;
+  background-color: rgb(21, 177, 195);
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-list {
+    position: absolute;
+    top: 8vh;
+    left: 0; /* Adicione esta propriedade para posicionar o painel à esquerda */
+    width: 50vw;
+    height: 92vh;
+    background: #F4A82E;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(-100%); /* Altere de translateX(100%) para translateX(-100%) para que o painel fique oculto inicialmente */
+    transition: transform 0.3s ease-in;
+    z-index: 3;
+  }
+ 
+
+
+
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+.cart-icon {
+  position: relative;
+}
+
+.cart-notification {
+  position: absolute;
+  top: -10px; /* Move o número para cima */
+  right: -10px; /* Move o número para a direita */
+  background-color: red;
+  color: white;
+  border-radius: 50%; /* Isso cria um círculo em torno do número */
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  z-index: 1; /* Certifique-se de que o número fique acima do ícone */
+}
+
+.nav-list.active {
+  transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+
+@media (max-width: 768px) {
+  .featured-card {
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+.login-button button {
+  border: none;
+  background-color: #06cec4;
+  padding: 10px 14px;
+  border-radius: 5px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.whatsapp-float a {
+  display: block;
+  background-color: #25d366;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  line-height: 60px;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-float a:hover {
+  background-color: #128C7E;
+}
+
+.whatsapp-float img {
+  width: 100%;
+  height: auto;
+}
+
+main h1 {
+  text-align: center;
+}
+
+/* PRODUCTS */
+.product {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.product-category {
+  padding: 0 10vw;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  text-transform: capitalize;
+}
+
+.product-container {
+  padding: 0 10vw;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.product-container::-webkit-scrollbar {
+  display: none;
+}
+
+.product-card {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 450px;
+  margin-right: 40px;
+}
+
+.product-image {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.product-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discount-tag {
+  position: absolute;
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  color: #ff7d7d;
+  right: 10px;
+  top: 10px;
+  text-transform: capitalize;
+}
+
+.card-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  width: 90%;
+  text-transform: capitalize;
+  border: none;
+  outline: none;
+  background: #fff;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.product-card:hover .card-btn {
+  opacity: 1;
+}
+
+.card-btn:hover {
+  background: #ff7d7d;
+  color: #fff;
+}
+
+.product-info {
+  width: 100%;
+  height: 100px;
+  padding-top: 10px;
+}
+
+.product-brand {
+  text-transform: capitalize;
+}
+
+.product-short-description {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+  opacity: 0.5;
+  text-transform: capitalize;
+  margin: 5px 0;
+}
+
+.price {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.actual-price {
+  margin-left: 20px;
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.pre-btn,
+.nxt-btn {
+  border: none;
+  width: 10vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #128C7E 100%);
+  cursor: pointer;
+  z-index: 8;
+}
+
+.pre-btn {
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.nxt-btn {
+  right: 0;
+}
+
+.pre-btn img,
+.nxt-btn img {
+  opacity: 0.2;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img {
+  opacity: 1;
+}
+
+.collection-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.collection {
+  position: relative;
+}
+
+.collection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+  text-transform: capitalize;
+}
+
+.collection:nth-child(3) {
+  grid-column: span 2;
+  margin-bottom: 10px;
+}
+
+.featured-products {
+  text-align: center;
+}
+
+.featured-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.featured-card {
+  margin: 10px;
+  border-radius: 5px;
+  width: calc(33.33% - 20px);
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.product-info {
+  margin-top: 10px;
+}
+
+.wishlist-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.wishlist-button button.featured-card-btn {
+  padding: 10px;
+  text-transform: capitalize;
+  border: none;
+  outline: none;
+  background: #128C7E;
+  border-radius: 5px;
+  transition: opacity 0.5s;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.wishlist-button button.featured-card-btn:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.product-card:hover .featured-card-btn {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .featured-card {
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+/* Estilos para o footer */
+footer {
+  background-color: #068d86;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Estilos para as colunas no footer */
+.footer-column {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.footer-column h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-column ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+/* Estilos para os ícones sociais no footer */
+.footer-icons {
+  margin-top: 20px;
+}
+
+.footer-icons a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+/* Estilos para os links no texto de direitos autorais */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: 10px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.footer-links li {
+  margin: 10px 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}

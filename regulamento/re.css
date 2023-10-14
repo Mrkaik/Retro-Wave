@@ -1,0 +1,108 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #019C94;
+    color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #019C94;
+}
+
+ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Estilos para o rodapé */
+footer {
+    text-align: center;
+    background-color: #019C94;
+    color: #fff;
+    padding: 10px 0;
+}
+
+/* Estilos de links */
+a {
+    color: #019C94;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para o botão de voltar */
+.section button {
+    background-color: #019C94;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.section button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para telas menores (responsivo) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    h2 {
+        font-size: 16px;
+    }
+    
+    ul {
+        margin-left: 10px;
+    }
+    
+    p {
+        font-size: 14px;
+    }
+    
+    .section button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
